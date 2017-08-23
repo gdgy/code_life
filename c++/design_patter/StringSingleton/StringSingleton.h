@@ -4,13 +4,12 @@
 
 class StringSingleton
 {
-    //private:
-	public:      
-  std::string mString;
-        StringSingleton() {}
-        StringSingleton(const StringSingleton& right) {}
-        const StringSingleton& operator=(const StringSingleton &old) {}
-        //virtual ~StringSingleton() {}
+    private:
+  	std::string mString;
+        StringSingleton(){} 
+        StringSingleton(const StringSingleton& right);
+        const StringSingleton& operator=(const StringSingleton &old);
+        virtual ~StringSingleton() {}
     protected:
     public:
         std::string GetString() const
@@ -21,7 +20,7 @@ class StringSingleton
         {
             mString = newString;
         }
-        static StringSingleton &Instance()
+        static StringSingleton& Instance()
         {
             static StringSingleton* instance = new StringSingleton;
             return *instance;

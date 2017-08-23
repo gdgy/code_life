@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    StringSingleton single = StringSingleton::Instance();
+    StringSingleton& single = StringSingleton::Instance();
     cout << single.GetString() << endl;
     cout << "Hello world!" << endl;
     return 0;
