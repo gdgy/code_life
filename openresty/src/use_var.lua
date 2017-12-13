@@ -1,0 +1,11 @@
+# use_var.lua
+ngx.say('hello........')
+ngx.say(ngx.var.args)
+ngx.say(ngx.var.binary_remote_addr)
+ngx.say(ngx.var.body_bytes_sent)
+ngx.say(ngx.var.document_root)
+ngx.say(ngx.var.host)
+ngx.say(ngx.var.hostname)
+ngx.say(ngx.var.http_cookie)
+ngx.say(ngx.var.http_referer)
+ngx.say(ngx.var.http_user_agent)
