@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1513221158 source:e:\share\code_life\c++\alo\main.cpp
+	<iostream>
+
+1513221129 source:e:\share\code_life\c++\alo\move_to_right.cpp
+	<iostream>
+	<cstring>
+

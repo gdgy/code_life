@@ -12,15 +12,14 @@
 
 int post_file()
 {
-    const char query[] = 
+  const char* query = 
   "POST /upload  HTTP/1.1\r\n"
   "User-Agent: curl/7.35.0\r\n"
   "Host: www.baidu.com\r\n"
   "Accept: */*\r\n"
   "\r\n"
   "Expect: 100-continue\r\n"
-  "Content-Type: multipart/form-data;filename=test.cab; boundary=------------------------215fa5025e58e0c4\r\n"
-  "\r\n";
+  "Content-Type: multipart/form-data;filename=test.cab; boundary=------------------------215fa5025e58e0c4\r\n";
   
   struct sockaddr_in server;
   int client_fd;
@@ -35,24 +34,28 @@ int post_file()
   server.sin_family = AF_INET;
   server.sin_port = htons(port);
   inet_pton(AF_INET, server_addr, &server.sin_addr);
-  //server.sin_addr = inet_addr(server_addr);
   if (connect(client_fd, (struct sockaddr*) &server, sizeof(server))) {
         perror("connect");
         close(client_fd);
         return 1;
     }
-   char *buffer;
-   //memset(buffer, 0, 1024);
-   char header[1024];
+   
    FILE*fp;
    fp = fopen("first.c", "r");
    fseek(fp,0L,SEEK_END); 
    int fsize=ftell(fp);
    fseek(fp, 0, 0);
+   
+   char header[1024];
+   memset(header, 0, 1024);
+   char* length = "Content-Length:";
+   snprintf(header, 1024,  "%s%s%d\r\n\r\n", query, length, fsize);
+   send(client_fd, header, strlen(header), 0);
+   
+   char* buffer;
    buffer = (char*)malloc(fsize*sizeof(char));
    fread(buffer, 1, fsize, fp);
    printf("%d", fsize);
-   printf("%d",(int)send(client_fd, query, strlen(query), 0));
    int remaining = fsize;
    int nwritten = 0;
    while (remaining > 0)
@@ -60,7 +63,6 @@ int post_file()
       nwritten -= send(client_fd, buffer, remaining, 0);
       remaining -= nwritten;
    }
-   
    
    
 }
@@ -102,12 +104,16 @@ void post_args()
     //这里忽略掉了socket连接代码  
       
     send(client_fd, strHttpPost, strlen(strHttpPost), 0);  
+    recv(client_fd, strHttpPost, 1024, 0);
+    printf("%s", strHttpPost);
 }
 
 
 int main(int c, char **v)
 {
     post_args();
+    post_file();
+    return 0;
     const char query[] =
         "GET / HTTP/1.0\r\n"
         "Host: www.baidu.com\r\n"

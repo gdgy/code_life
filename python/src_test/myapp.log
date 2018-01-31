@@ -1,0 +1,21 @@
+Fri, 26 Jan 2018 15:47:45 base.py[line:433] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Fri, 26 Jan 2018 15:47:45 base.py[line:433] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Fri, 26 Jan 2018 15:47:45 base.py[line:433] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Fri, 26 Jan 2018 15:47:45 base.py[line:433] INFO Adding job tentatively -- it will be properly scheduled when the scheduler starts
+Fri, 26 Jan 2018 15:47:45 base.py[line:867] INFO Added job "tick" to job store "default"
+Fri, 26 Jan 2018 15:47:45 base.py[line:867] INFO Added job "one_time_job" to job store "default"
+Fri, 26 Jan 2018 15:47:45 base.py[line:867] INFO Added job "one_time_job" to job store "default"
+Fri, 26 Jan 2018 15:47:45 base.py[line:867] INFO Added job "cron_job" to job store "default"
+Fri, 26 Jan 2018 15:47:45 base.py[line:159] INFO Scheduler started
+Fri, 26 Jan 2018 15:47:45 base.py[line:120] WARNING Run time of job "one_time_job (trigger: date[2018-01-16 16:19:05 CST], next run at: 2018-01-16 16:19:05 CST)" was missed by 9 days, 23:28:40.578000
+Fri, 26 Jan 2018 15:47:45 base.py[line:621] INFO Removed job ad2ca40fc5444a3db9caa439d4c9a182
+Fri, 26 Jan 2018 15:47:50 base.py[line:123] INFO Running job "cron_job (trigger: cron[day_of_week='0-6', second='*/5'], next run at: 2018-01-26 15:47:50 CST)" (scheduled at 2018-01-26 15:47:50+08:00)
+Fri, 26 Jan 2018 15:47:55 base.py[line:964] WARNING Execution of job "cron_job (trigger: cron[day_of_week='0-6', second='*/5'], next run at: 2018-01-26 15:47:55 CST)" skipped: maximum number of running instances reached (1)
+Fri, 26 Jan 2018 15:48:00 base.py[line:964] WARNING Execution of job "cron_job (trigger: cron[day_of_week='0-6', second='*/5'], next run at: 2018-01-26 15:48:00 CST)" skipped: maximum number of running instances reached (1)
+Fri, 26 Jan 2018 15:48:05 base.py[line:964] WARNING Execution of job "cron_job (trigger: cron[day_of_week='0-6', second='*/5'], next run at: 2018-01-26 15:48:05 CST)" skipped: maximum number of running instances reached (1)
+Fri, 26 Jan 2018 15:48:10 base.py[line:964] WARNING Execution of job "cron_job (trigger: cron[day_of_week='0-6', second='*/5'], next run at: 2018-01-26 15:48:10 CST)" skipped: maximum number of running instances reached (1)
+Fri, 26 Jan 2018 15:48:15 base.py[line:964] WARNING Execution of job "cron_job (trigger: cron[day_of_week='0-6', second='*/5'], next run at: 2018-01-26 15:48:15 CST)" skipped: maximum number of running instances reached (1)
+Fri, 26 Jan 2018 15:48:15 base.py[line:123] INFO Running job "one_time_job (trigger: interval[0:00:30], next run at: 2018-01-26 15:48:45 CST)" (scheduled at 2018-01-26 15:48:15.569000+08:00)
+Fri, 26 Jan 2018 15:48:15 base.py[line:123] INFO Running job "tick (trigger: interval[0:00:30], next run at: 2018-01-26 15:48:15 CST)" (scheduled at 2018-01-26 15:48:15.569000+08:00)
+Fri, 26 Jan 2018 15:48:15 base.py[line:144] INFO Job "one_time_job (trigger: interval[0:00:30], next run at: 2018-01-26 15:48:45 CST)" executed successfully
+Fri, 26 Jan 2018 15:48:20 base.py[line:964] WARNING Execution of job "cron_job (trigger: cron[day_of_week='0-6', second='*/5'], next run at: 2018-01-26 15:48:20 CST)" skipped: maximum number of running instances reached (1)

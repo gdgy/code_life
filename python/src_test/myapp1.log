@@ -1,0 +1,2 @@
+01-11 11:38 root         INFO     key:'key', key2:1111 err_msg:222
+01-11 11:38 root         INFO     err_msg:'module' object is not callable
